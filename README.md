@@ -4,8 +4,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.26.
 
-- The fake database is a .json file and is used the usual hhtpClient to get the data.
-- The updates on entities are just keep for that session because it's not a true database.
+- The fake database is a .json file and is used the usual angular HttpClient to get the data.
+- The updates on entities are just keep for that "session" because it's not a true database.
 - Used bootstrap, ng-bootstrap, fontawesome, ngx-toastr, angular-mentions.
 
 
