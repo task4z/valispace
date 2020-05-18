@@ -1,0 +1,29 @@
+<ng-template #popContent>
+  <div class="row">
+    <div class="col-12">
+      <span>Id: {{employee?.id}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <span>Username: {{employee?.username}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <span>Phone: {{employee?.phone}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <span>Role: {{employee?.role}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <span>Name: {{employee?.name}}</span>
+    </div>
+  </div>
+</ng-template>
+<ins class="text-primary" [ngbPopover]="popContent" *ngIf="field==='phone'" triggers="mouseenter:mouseleave">#{{employee?.phone}}</ins>
+<ins class="text-primary" [ngbPopover]="popContent" *ngIf="field==='username'" triggers="mouseenter:mouseleave">@{{employee?.username}}</ins>

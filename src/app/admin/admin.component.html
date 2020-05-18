@@ -1,0 +1,29 @@
+
+<div class="card">
+  <div class="card-hearder p-3 text-center">
+    <span class="h1">Employees</span>
+  </div>
+  <div class="card-body">
+    <div class="row border-top border-bottom">
+      <div class="col-1 font-weight-bold text-truncate" title="Id">Id</div>
+      <div class="col-2 font-weight-bold text-truncate" title="Username">Username</div>
+      <div class="col-2 font-weight-bold text-truncate" title="Phone">Phone</div>
+      <div class="col-2 font-weight-bold text-truncate" title="Role">Role</div>
+      <div class="col-2 font-weight-bold text-truncate" title="Name">Name</div>
+      <div class="col-3 font-weight-bold text-truncate text-center" title="Action">Action
+        <i class="fa fa-user-plus text-success" title="Add employee" role="button" (click)="addEmployee()"></i>
+      </div>
+    </div>
+    <div class="row border-bottom" *ngFor="let item of employees">
+      <div class="col-1 text-truncate" [title]="item.id">{{item.id}}</div>
+      <div class="col-2 text-truncate" [title]="item.username">{{item.username}}</div>
+      <div class="col-2 text-truncate" [title]="item.phone">{{item.phone}}</div>
+      <div class="col-2 text-truncate" [title]="item.role">{{item.role}}</div>
+      <div class="col-2 text-truncate" [title]="item.name">{{item.name}}</div>
+      <div class="col-3 text-truncate text-center">
+        <i class="fa fa-user-minus text-danger" title="Remove employee" (click)="deleteEmployee(item)" role="button"></i>
+        <i class="fa fa-user-edit" title="Edit employee" (click)="editEmployee(item)" role="button"></i>
+      </div>
+    </div>
+  </div>
+</div>

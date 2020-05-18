@@ -1,0 +1,53 @@
+<div class="modal-header">
+  <h4 class="modal-title">Add Employee</h4>
+  <button type="button" class="close" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="fg" (ngSubmit)="submit()">
+    <div class="row form-group">
+      <div class="col-4 d-flex align-items-center">
+        <span class="ml-auto">Username</span>
+      </div>
+      <div class="col-8">
+        <input [class.is-invalid]="fg.get('username').invalid && fg.get('username').touched"
+        type="text" class="form-control" placeholder="Username" formControlName="username">
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-4 d-flex align-items-center">
+        <span class="ml-auto">Phone Number</span>
+      </div>
+      <div class="col-8">
+        <input [class.is-invalid]="fg.get('phone').invalid && fg.get('phone').touched"
+        type="text" class="form-control" placeholder="Phone Number" formControlName="phone">
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-4 d-flex align-items-center">
+        <span class="ml-auto">Role</span>
+      </div>
+      <div class="col-8">
+        <select [class.is-invalid]="fg.get('role').invalid && fg.get('role').touched"
+        class="custom-select" formControlName="role">
+          <option *ngFor="let role of roles" [selected]="role == fg.get('role').value">{{role}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-4 d-flex align-items-center">
+        <span class="ml-auto">Name</span>
+      </div>
+      <div class="col-8">
+        <input [class.is-invalid]="fg.get('name').invalid && fg.get('name').touched"
+        type="text" class="form-control" placeholder="Name" formControlName="name">
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-secondary" (click)="close()">Cancel</button>
+  <button type="submit" class="btn btn-primary" ngbAutofocus
+  (click)="submit()" [disabled]="fg.invalid" [style.cursor]="fg.valid ? 'pointer':'not-allowed'">Ok</button>
+</div>

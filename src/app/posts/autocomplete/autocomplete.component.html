@@ -1,0 +1,14 @@
+<div class="row py-3" [formGroup]="parentForm">
+  <div class="d-flex align-items-center col-3" [class.col-md-2]="buttonVisible" [class.col-md-3]="!buttonVisible">
+    <label for="comment">Comment</label>
+  </div>
+  <div [ngClass]="{'col-md-9 col-6': buttonVisible, 'col-9':!buttonVisible}">
+    <textarea class="form-control" id="comment" placeholder="Add your comment here..."
+    [class.is-invalid]="parentForm.get('comment').invalid && parentForm.get('comment').touched"
+    formControlName="comment" [mentionConfig]="mentionConfig"
+    ></textarea>
+  </div>
+  <div class="col-md-1 col-3" *ngIf="buttonVisible">
+    <button type="submit" class="btn btn-primary">Add</button>
+  </div>
+</div>
